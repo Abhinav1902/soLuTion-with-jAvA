@@ -1,0 +1,12 @@
+sum of all subest XOR :
+class Solution {
+    public int subsetXORSum(int[] nums) {
+      return dfs(nums,0,0);
+            
+        }
+          public int dfs(int nums[], int index, int currSum){
+        if(index==nums.length) return currSum;
+        
+        return dfs(nums,index+1,currSum^nums[index])+ dfs(nums,index+1,currSum);
+    }
+}
